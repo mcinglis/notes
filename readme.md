@@ -1,1 +1,1 @@
-* [Design patterns](design-patterns/index.md)
+* [Design patterns](/tree/masterdesign-patterns)
