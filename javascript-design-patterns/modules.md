@@ -15,10 +15,10 @@ var counter = (function() {
         },
         increment: function() {
             // Makes use of an exported function
-            return counter = this.value() + 1;
+            counter = this.value() + 1;
         },
         reset: function() {
-            return counter = 0;
+            counter = 0;
         }
     };
 })();
@@ -45,10 +45,10 @@ var counter = (function() {
         return counter;
     };
     var increment = function() {
-        return counter = value() + 1;
+        counter = value() + 1;
     };
     var reset = function() {
-        return counter = 0;
+        counter = 0;
     };
     return {
         value: value,
