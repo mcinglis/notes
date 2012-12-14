@@ -40,7 +40,7 @@ Make `__repr__` return an `eval`uable string representation of the object.
 Container(1, 2, 'Hello', False)
 ```
 
-## Provide iteration for sequences where natural
+### Provide iteration for sequences where natural
 
 Implement `__iter__` to expose an iterator to users. This hides the underlying complexity, as users can then use `for` to iterate through your data.
 
@@ -49,7 +49,7 @@ Implement `__iter__` to expose an iterator to users. This hides the underlying c
 ...     print(video)
 ```
 
-## Overload arithmetic operators where natural
+### Overload arithmetic operators where natural
 
 Overload arithmetic operators to make the semantics of your API seem more natural. For example, `__add__(self, other)` can be overloaded to enable `self + other`. Likewise for `__sub__`, `__mul__`, and `__div__`.
 
@@ -58,7 +58,7 @@ Overload arithmetic operators to make the semantics of your API seem more natura
 >>> hero.position += 5 * hero.velocity
 ```
 
-## Provide boolean meaning where natural
+### Provide boolean meaning where natural
 
 Empty data structures, queries with no results, and null objects could be considered falsy. This is defined with `__bool__` in Python 3, and `__nonzero__` in earlier Python versions.
 
@@ -69,7 +69,7 @@ Empty data structures, queries with no results, and null objects could be consid
 ...     self.say('Muahaha. No hope for you now.')
 ```
 
-## Provide length semantics where natural
+### Provide length semantics where natural
 
 Sets (actual or conceptual) of anything should probably have a length. This can be provided by overriding `__len__`.
 
@@ -78,22 +78,22 @@ Sets (actual or conceptual) of anything should probably have a length. This can 
 ...     self.message(target, 'Join my team')
 ```
 
-## Provide support for `x in collection` where natural
+### Provide support for `x in collection` where natural
 
 Collections and data structures should provide natural membership checking with the `in` keyword. This can be done by overriding `__contains__`.
 
 ```python
 >>> if Terminator in self.vision:
-...     if not self.equip(self.weapon, RocketLauncher):
+...     if not self.equip(self.weapons.rocket_launcher):
 ...         self.message(self.team, 'Run!')
 ```
 
-## Provide dynamic attributes where natural
+### Provide dynamic attributes where natural
 
 Dynamic attributes can provide very readable and human-friendly APIs.  However, they aren't REPL friendly due to not being autocompleteable. Also, dynamic attributes can cause confusion if access is supported but assignment isn't, or vice versa.
 
 Dynamic access can be provided by overriding `__getattr__`, and dynamic assignment can be provided by overriding `__setattr__`.
 
-## Provide ordering semantics where natural
+### Provide ordering semantics where natural
 
-Ordering semantics 
+Ordering semantics can be implemented by overriding `__cmp__`. Not only does it provide all the ordering and equality operators such as `=`, `!=`, `<`, `>` and so on, but also supports the `sorted` function operating on lists of the object.
