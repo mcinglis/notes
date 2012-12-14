@@ -1,6 +1,6 @@
 # The five essential phone-screen questions
 
-[Source](//sites.google.com/site/steveyegge2/five-essential-phone-screen-questions)
+https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions
 
 Steve Yegge writes about the best ways to screen candidates over the phone for in-person interviews, learning from experience phone screening at Google.
 
