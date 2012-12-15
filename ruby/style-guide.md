@@ -138,18 +138,16 @@ end
 Use `{`/`}` for single-line blocks, and `do`/`end` for multi-line blocks.
 
 ```ruby
-# good
 names.each { |name| puts name }
 
-# bad
 names.each do |name|
-  puts name
+  # multiple lines
 end
+```
 
-# good
-names.select { |name| name.start_with?("S") }.map { |name| name.upcase }
+Use block chaining sparingly, but if you do, use `do` and `end`. Most block chains should be refactored.
 
-# bad
+```ruby
 names.select do |name|
   name.start_with?("S")
 end.map do |name|
@@ -179,28 +177,12 @@ STATES = %w(draft open closed)
 Use `%()` for single-line strings which require both interpolation and embedded double quotes. For multi-line strings, prefer heredocs.
 
 ```ruby
-# good - requires interpolation, has quotes, single line
 %(<tr><td class="name">#{name}</td>)
 
-# good - requires interpolation, has quotes, multiple lines
 <<END
 Lorem "ipsum dolor" sit amet,
 consectetur adipisicing #{elit}.
 END
-
-# bad - no interpolation needed
-%(<div class="text">Some text</div>)
-# should be
-'<div class="text">Some text</div>'
-
-# bad - no double quotes
-%(This is #{quality} style)
-# should be
-"This is #{quality} style"
-
-# bad - multiple lines
-%(<div>\n<span class="big">#{exclamation}</span>\n</div>)
-# should be a heredoc.
 ```
 
 ## Regular expressions
