@@ -25,20 +25,11 @@ some(arg).other
 [1, 2, 3].length
 ```
 
-Use parentheses for all method invocations, except when no arguments are being passed.
+Use parentheses for method invocations on objects, except when no arguments are being passed.
 
 ```ruby
-# good
 john.talk
-
-# good
-john.marry(mary)
-
-# bad
-john.talk()
-
-# bad
-john.marry mary
+john.eat(green, eggs, ham)
 ```
 
 Indent `when` and `else` as deep as the corresponding `case`.
