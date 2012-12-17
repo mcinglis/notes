@@ -93,12 +93,25 @@ This is where most candidates fail with OO. For OO-design weeder questions, have
 
 #### Questions
 
-##### Design a deck of cards that can be used for different card game applications
+##### Weeder questions
 
-##### Model the animal kingdom as a class system, for use in a virtual zoo program
+###### Design a deck of cards that can be used for different card game applications
 
-##### Create a class design to represent a filesystem
+###### Model the animal kingdom as a class system, for use in a virtual zoo program
 
-##### Design an OO representation to model HTML
+###### Create a class design to represent a filesystem
 
+###### Design an OO representation to model HTML
+
+##### In-depth questions
+
+###### Design a parking garage
+
+###### Design a bank of elevators in a skyscraper
+
+###### Model the monorail system at Disney World
+
+###### Design a restaurant reservation system
+
+###### Design a hotel room-reservation system
 
