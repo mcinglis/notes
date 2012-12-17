@@ -1,6 +1,8 @@
 Mixins are a common pattern in Javascript that automate the assignment of properties of one object to another.
 
-Mixins need to be handled differently in ES3 and ES5. A full, compatible mixin function should look something like this:
+Mixins need to be handled differently in ES3 and ES5.
+
+More information: http://www.nczonline.net/blog/2012/12/11/are-your-mixins-ecmascript-5-compatible/
 
 A mixin function written only for ES5 compatibility would be:
 
