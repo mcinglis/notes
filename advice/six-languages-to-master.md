@@ -1,7 +1,5 @@
 # Six languages to master
 
-*By Michael O. Church.*
-
 https://michaelochurch.wordpress.com/2012/07/27/six-languages-to-master/
 
 ## Python
@@ -28,6 +26,7 @@ https://michaelochurch.wordpress.com/2012/07/27/six-languages-to-master/
 * Forces programming from the bottom up
 
 > Instead of creating vague "objects" that might be hacked into bloated nonsense over the lifespan of a codebase, developers create datatypes out of simpler ones, and use referentially transparent functions as the basic building blocks of most of their programs.
+>
 > This bottom up structure forces people to build programs on sound principles.
 
 
