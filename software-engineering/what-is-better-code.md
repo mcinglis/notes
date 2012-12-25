@@ -161,4 +161,6 @@ end
 
 When changing code, you need to know where to make the change. You also want to keep the scope of the change as small as possible.
 
-**Coupling** is an indicator of the scope of a particular change. If two classes are tightly coupled, it means that a change in one is likely to necessitate a change in another.
+**Coupling** is an indicator of the scope of a particular change. If two classes are tightly coupled, it means that a change in one is likely to necessitate a change in another.  A class that is coupled to many classes makes the system harder to change.
+
+Ability to change conflicts with other facets of readability.
