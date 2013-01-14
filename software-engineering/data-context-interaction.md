@@ -16,11 +16,11 @@ DCI aims to:
 * help developers reason about system state and behavior rather than object state and behavior
 * support object-oriented thinking, rather than class-oritned thinking
 
-The *data* are "what the system is." Data object interfaces are simple and minimal: just enough to capture the domain properties, but without operations that are unique to any particular scenario. The data should only consist of persistence-level methods, but never how the persisted data is used.
+The **data** are "what the system is." Data object interfaces are simple and minimal: just enough to capture the domain properties, but without operations that are unique to any particular scenario. The data should only consist of persistence-level methods, but never how the persisted data is used.
 
-The *context* is the environment in which data objects execute their roles. There is always at least one context for every one user story. Depending on the complexity of the user story, there may be more than one context, possibly necessitating a story break-down. The goal of the context is to connect roles (what the system *does*) to data objects (what the system *is*).
+The **context** is the environment in which data objects execute their roles. There is always at least one context for every one user story. Depending on the complexity of the user story, there may be more than one context, possibly necessitating a story break-down. The goal of the context is to connect roles (what the system *does*) to data objects (what the system *is*).
 
-The *interaction* is "what the system *does*". The interaction is implemented as roles which are played by objects at run time. These objects combine the state and methods of a data object with methods (but no state, as roles are stateless).
+The **interaction** is "what the system *does*". The interaction is implemented as roles which are played by objects at run time. These objects combine the state and methods of a data object with methods (but no state, as roles are stateless).
 
 ## Example
 
