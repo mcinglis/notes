@@ -82,8 +82,6 @@ class BookController < ApplicationController
 end
 ```
 
-Assuming `Book` was implemented to have a `#find` method.
-
 ## Testing
 
 With RSpec and Capybara.
