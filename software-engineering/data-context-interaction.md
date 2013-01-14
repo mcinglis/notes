@@ -28,9 +28,7 @@ The **interaction** is "what the system *does*". The interaction is implemented 
 # The data: no methods, just class-level definitions of persistence,
 # association, and data validation. The ways in which Book is used should not
 # be a concern of the Book model.
-class Book
-  include ActiveRecord::Validations
-
+class Book < ActiveRecord::Base
   validates :title, presence: true
 end
 
@@ -78,7 +76,7 @@ class BookController < ApplicationController
   def add_to_cart
     AddToCartContext.call(
       customer: current_user,
-      product: Book.find(params[:id]
+      product: Book.find(params[:id])
     )
   end
 end
