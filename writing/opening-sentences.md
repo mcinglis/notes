@@ -1,5 +1,8 @@
 # Opening sentences
 
+* <http://asserttrue.blogspot.com/2013/01/how-to-write-opening-sentence.html>
+* <https://news.ycombinator.com/item?id=5060076>
+
 ## In first-person
 
 Professional writers, whenever they can get away with it, like to begin a piece of nonfiction with a personal aside or a personal story.
@@ -83,3 +86,41 @@ You can put up a straw man and knock it down. [Naomi Klein](http://en.wikipedia.
 > The conventional view of [XYZ] is [ABC]. But it turns out the conventional view is wrong.
 
 Or, you can surprise the world with something outlandishly original. Don't be like most people. Don't just start with "If you're like most people..."
+
+## Grabbing the audience's attention
+
+Most people stop reading something after the first few sentences. In that crucial 10 to 15 seconds, a book, essay or article has to win its audience's attention.
+
+Opening lines needn't be pure gimmickry or conceived entirely apart from the rest of the piece itself. Provocation for provocation's sake is a game of diminishing returns. Rather, the opening line should immediately intrigue the reader by establishing a compelling tone; one that the rest of the work will follow.
+
+Compelling does not necessarily mean brief, though in modern practice, the two are frequently correlated. That being said, some of the best opening lines in literary history are long and winding. The key is setting up intrigue, however many words that may take.
+
+### Examples from fiction
+
+George Orwell, *1984*:
+
+> It was a bright cold day in April, and the clocks were striking thirteen.
+
+Ray Bradbury, *Fahrenheit 451*:
+
+> It was a pleasure to burn.
+
+Franz Kafka, *The Metamorphosis*:
+
+> As Gregor Samsa awoke one morning from uneasy dreams he found himself transformed in his bed into a gigantic insect.
+
+### Examples from nonfiction
+
+Michael Pollan, *The Omnivore's Dilemma*:
+
+> Air-conditioned, odorless, illuminated by buzzing fluorescent tubes, the American market doesn't present itself as having very much to do with Nature.
+
+Jane Churchon, *The Dead Book*:
+
+> I like to take my time when I pronounce someone dead.
+
+David Sedaris, *Old Faithful*:
+
+> Out of nowhere I developed this lump.
+
+
