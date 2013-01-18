@@ -1,8 +1,6 @@
 # Gnome Shell
 
-## Shortcuts
-
-### Applications
+## Applications
 
 **Alt+Tab** cycles over open applications. **Alt+Shift+Tab** cycles backwards over open applications.
 
@@ -16,7 +14,7 @@
 
 **Ctrl+Click an icon in the dash** to launch a new window of that application in the current workspace.
 
-### Window management
+## Window management
 
 **Super+Up** maximizes the active window.
 
@@ -24,13 +22,13 @@
 
 **Super+Down** restores the active window to its original size.
 
-### Screenshots
+## Screenshots
 
 **Print** will save the screen, **Alt+Print** will save the current window, and **Shift+Print** will save a specified area drawn with the cursor. **Ctrl+<ScreenshotShortcut>** will copy the screenshot to the clipboard instead.
 
 **Ctrl+Alt+Shift+R** will toggle screencast recording; there will be a red recording icon in the bottom right of the screen when recording.
 
-### System
+## System
 
 **Ctrl+Alt+Delete** will open the "power off" dialog window.
 
