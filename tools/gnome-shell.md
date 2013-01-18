@@ -6,7 +6,7 @@
 
 **Alt+Tab** cycles over open applications. **Alt+Shift+Tab** cycles backwards over open applications.
 
-**Alt+`** cycles over windows of the current application. **Alt+Shift+`** cycles backwards.
+**Alt+\`** cycles over windows of the current application. **Alt+Shift+\`** cycles backwards.
 
 **Ctrl+Alt+Up/Down** moves between workspaces. **Ctrl+Alt+Shift+Up/Down** moves windows between workspaces.
 
