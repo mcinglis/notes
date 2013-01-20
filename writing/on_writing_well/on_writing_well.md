@@ -63,3 +63,21 @@ Sentences that repeat what the previous sentence said, or says something readers
 > Good writers are visible just behind their words. If you aren't allowed to use "I", at least think "I" while you write, or write the first draft in the first person and then take the "I"s out. It will warm up your personal style.
 
 > Sell yourself, and your subject will exert its own appeal. Believe in your own identity and your own opinions. Writing is an act of ego, and you might as well admit it. Use its energy to keep yourself going.
+
+## The Audience
+
+> You are writing for yourself. Don't try to visualize the great mass audience. There is no such audience -- every reader is a different person. Don't try to guess what sort of thing editors want to publish or what you think the country is in a mood to read. Editors and readers don't know what they want to read until they read it. Besides, they're always looking for something new.
+
+> Don't worry about whether the reader will "get it" if you indulge in a sudden impulse for humor. If it amuses you in the act of writing, put it in. (It can always be taken out, but only you can put it in.) You are writing primarily to please yourself, and if you go about it with enjoyment you will also entertain the readers who are worth writing for. If you lose the dullards back in the dust, you don't want them anyway.
+
+> On the issue of whether the reader likes you, or likes what you are saying or how you are saying it, or agrees with it, or feels an affinity for your sense of humor or your vision of life, don't give him a moment's worry. You are who you are, he is who he is, and either you'll get along or you won't.
+
+> How can you think carefully about not losing the reader and still be carefree about his opinion?
+
+> First, work hard to master the tools. Simplify, prune and strive for order. Think of this as a mechanical act, and soon your sentences will become cleaner. Your sentences will be grounded in solid principles, and your chances of losing the reader will be smaller.
+
+> Think of the other as a creative act: the expressing of who you are. Relax and say what you want to say. And since style is who you are, you only need to be true to yourself to find it gradually emerging from under the accumulated clutter and debris, growing more distinctive every day.
+
+> Never say anything in writing that you wouldn't comfortably say in conversation. If you're not a person who says "indeed" or "moreover," or who calls someone an individual ("he's a fine individual"), *please* don't write it.
+
+
