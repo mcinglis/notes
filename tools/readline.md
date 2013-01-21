@@ -11,4 +11,3 @@
 `Ctrl+X E` will open your editor up with the current line entry contents.
 
 `Alt+.` or `<ESC> .` will place the argument of the last command at the cursor.
-
