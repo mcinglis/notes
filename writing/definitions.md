@@ -10,3 +10,9 @@
 **anathema**: something or someone that one vehemently dislikes. "racial hatred was anathema to her".
 
 **egregious**: outstandingly bad; shocking.
+
+**surreptitious**: kept secret, especially because it would not be approved of.
+
+**panhandle**: beg in the street.
+
+**stalwart**: loyal, reliable, hardworking. Strong and sturdy.
