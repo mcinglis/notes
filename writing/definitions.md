@@ -1,6 +1,12 @@
 
 **consecrate**: make or declare (something, typically a church) sacred; dedicate formally to a religious or divine purpose.
 
-**vaudeville** was a theatrical genre of variety entertainment popular in North America from the early 1880s to the early 1930s. Types of acts included popular and classical musicians, dancers, comedians, trained animals, and magicians.
+**vaudeville**: a type of entertainment popular chiefly in the US in the early 20th century, featuring a mixture of specialty acts such as burlesque comedy and song and dance.
 
-**paralipsis** is a rhetorical device wherein the speaker or writer invokes a subject by denying that it should be invoked. The device can be used to distance the speaker from unfair claims, while still bringing them up. For instance, a politician might say, "I don't want to talk about the allegations that my opponent is a drunk."
+**behest**: a person's orders or command.
+
+**neurosis**: a relatively mild mental illness that is not caused by organic disease, involving symptoms of stress (depression, anxiety, obsessive behavior, hypochondria) but not a radical loss of touch with reality.
+
+**anathema**: something or someone that one vehemently dislikes. "racial hatred was anathema to her".
+
+**egregious**: outstandingly bad; shocking.
