@@ -11,3 +11,5 @@
 `reset` will restart the terminal.
 
 `at` queues shell commands to be executed later. Example: `echo "ls -l" | at midnight`.
+
+`vim -` will get Vim to read from stdin, such that commands can be piped into it.

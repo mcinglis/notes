@@ -16,3 +16,10 @@
 **panhandle**: beg in the street.
 
 **stalwart**: loyal, reliable, hardworking. Strong and sturdy.
+
+**amenable**: 1. (of a person) open and responsive to suggestion; easily persuaded or controlled. 2. (of a thing) capable of being acted upon in a particular way; susceptible to.
+
+**amiable**: having or displaying a friendly and pleasant manner
+
+**unassuming**: not pretentious or arrogant; modest.
+
