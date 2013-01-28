@@ -2,7 +2,9 @@
 
 Meteor stores data in *collections*.
 
-## `new Meteor.Collection(name, [options])`
+## `Meteor.Collection`
+
+### `new Meteor.Collection(name, [options])`
 
 * **name**: the name of the collection. If null, creates an unmanaged (unsynchronized) local collection.
 * options **manager**: the Meteor connection that will manage this collection, defaults to `Meteor` if null. Unmanaged collections cannot specify a manager.
@@ -43,7 +45,7 @@ $ meteor remove autopublish
 
 ...and instead call `Meteor.publish` to specify which parts of your collection should be published to which users.
 
-## *collection*`.find(selector, [options])`
+### *collection*`.find(selector, [options])`
 
 Find the documents in a collection that match the selector.
 
@@ -60,13 +62,15 @@ Find the documents in a collection that match the selector.
 * `map` and `forEach` allow iteration over the matching documents.
 * `observe` registers callbacks for when the set of matching documents changes.
 
-## *collection*`.findOne(selector, [options])`
+Read the cursor notes for more.
+
+### *collection*`.findOne(selector, [options])`
 
 Finds the first document that matches the selector, as ordered by sort and skip options.
 
 Equivalent to `find(selector, options).fetch()[0]`.
 
-## *collection*`.insert(doc, [callback])`
+### *collection*`.insert(doc, [callback])`
 
 Inserts a document in the collection and returns its unique `_id`.
 
@@ -85,7 +89,7 @@ Items.insert({ list: groceriesId, name: 'Watercress' });
 Items.insert({ list: groceriesId, name: 'Persimmons' });
 ```
 
-## *collection*`.update(selector, modifier, [options], [callback])`
+### *collection*`.update(selector, modifier, [options], [callback])`
 
 Modifies one or more documents in the collection.
 
@@ -101,7 +105,7 @@ Users.update({ score: { $gt: 10 } },
              { multi: true });
 ```
 
-## *collection*`.remove(selector, [callback])`
+### *collection*`.remove(selector, [callback])`
 
 Removes documents from the collection.
 
@@ -113,14 +117,14 @@ Users.remove({ karma: { $lt: -2 } });
 Logs.remove({});
 ```
 
-## *collection*`.allow(options)`
+### *collection*`.allow(options)`
 
 Allows users to write directly to this collection from client code, subject to limitations you define.
 
 * options **insert**, **update**, **remove** (Function): functions that look at the proposed modification and return true if it should be allowed, or false if not.
 * options **fetch** (Array of Strings): optional performance enhancement. Limits the fields that will be fetched from the database for inspection by your `update` and `remove` callbacks.
 
-## *collection*`.deny(options)`
+### *collection*`.deny(options)`
 
 Overrides `allow` rules. Same options as `allow`, except the callbacks return `true` if the operation should be denied.
 
@@ -161,4 +165,128 @@ Posts.deny({
   // No need to fetch the 'owner' field of posts
   fetch: ['locked']
 });
+```
+
+## Cursors
+
+To create a cursor, use *collection*`.find`. To access the documents in a cursor, use `fetch`, `map` or `forEach`.
+
+### *cursor*`.fetch()`
+
+Returns all matching documents as an Array.
+
+### *cursor*`.map(operator)`
+
+Returns an Array of the operator applied to each matching documents.
+
+On the server, if `operator` yields, other calls to `operator` may occur while the other is waiting. If string sequential execution is necessary, use `forEach`.
+
+### *cursor*`.forEach(operator)`
+
+Call `operator` once for each matching document, sequentially and synchronously.
+
+```javascript
+// Print the titles of the five top-scoring posts.
+var topPosts = Posts.find({}, { sort: { score: -1 }, limit: 5 });
+var count = 0;
+topPosts.forEach(function (post) {
+  console.log("Title of post " + count + ": " + post.title);
+  count += 1;
+});
+```
+
+### *cursor*`.count()`
+
+Returns the number of matching documents.
+
+Unlike the other functions, `count` registers a dependency only on the number of matching documents.
+
+```javascript
+// Display a count of posts with a score greater than 10. Automatically keep
+// it updated as the database changes.
+var fragment = Meteor.render(function () {
+  var posts = Posts.find({ score: { $gt: 10 } });
+  return "<p>There are " + posts.count() + " high-scoring posts.";
+});
+document.body.appendChild(fragment);
+```
+
+### *cursor*`.rewind()`
+
+Resets the query cursor.
+
+The `forEach`, `map`, and `fetch` methods can only be called once on a cursor. To access the data in a cursor more than once, use `rewind` to reset the cursor.
+
+### *cusor*`.observe(callbacks)`
+
+Watches a query. Receive callbacks as the result set changes.
+
+```javascript
+// Keep track of how many administrators are online.
+var count = 0;
+var query = Users.find({ admin: true, loggedIn: true });
+var handle = query.observe({
+  added: function (user, beforeIndex) {
+    count++;
+    console.log(use.name + " brings the total to " + count + " admins.");
+  },
+  removed: function () {
+    count--;
+    console.log("Lost one. We're now done to " + count + " admins.");
+  }
+});
+
+// After five seconds, stop keeping the count.
+setTimeout(function () { handle.stop; }, 5000);
+```
+
+## Selectors
+
+```javascript
+// Matches all documents where deleted is false.
+{ deleted: false }
+
+// Matches all documents where the name and cognomen are as given.
+{ name: 'Rhialto', cognomen: 'the Marvelous' }
+
+// Matches every document
+{}
+
+// Matches documents where age is greater than 18.
+{ age: { $gt: 18 }}
+
+// Also matches documents where tags is an array containing "popular"
+{ tags: 'popular' }
+
+// Matches documents where fruit is one of three possibilities
+{ fruit: { $in: ['peach', 'plum', 'pear'] } }
+```
+
+## Modifiers
+
+A modifier is an object that describes how to update a document in place by changing some of its fields.
+
+```javascript
+// Set the 'admin' property on the document to true.
+{ $set: { admin: true } }
+
+// Add to the 'votes' property, and add 'Traz' to the end of the 'supporters'
+// array.
+{ $inc: { votes: 2 }, $push: { supporters: 'Traz' } }
+```
+
+If a modifier contains no $-operator keys, then it is instead interpreted as a literal document and completely replaces whatever was previously in the database.
+
+```javascript
+// Find the document with id "123", and completely replace it.
+Users.update({ _id: "123" }, { name: "Alice", friends: ["Bob"] });
+```
+
+## Sort specifiers
+
+```javascript
+// All of these do the same thing.
+[['a', 'asc'], ['b', 'desc']]
+['a', ['b', 'desc']]
+{ a: 1, b: -1 }
 ```
