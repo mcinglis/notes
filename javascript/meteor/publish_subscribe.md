@@ -73,3 +73,53 @@ Meteor.autosubscribe( function () {
 // Client: use the new collection
 console.log( 'Current room has ' + Counts.findOne().count + ' messages.' );
 ```
+
+### Publish handler methods
+
+#### `this.set(collection, id, attributes)`
+
+Queues a command to set attributes.
+
+#### `this.unset( collection, id, keys )`
+
+Queues a command to unset attributes.
+
+#### `this.complete()`
+
+Queues a command to mark this subscription as complete (as in, initial attributes are set).
+
+#### `this.flush()`
+
+Sends all pending `set`, `unset`, and `complete` commands to the client.
+
+#### `this.onStop( callback )`
+
+Registers a callback to run when the subscription is stopped.
+
+#### `this.stop()`
+
+Stops the client's subscription.
+
+## `Meteor.subscribe( name [, arg1, arg2, ... ] [, onComplete] )`
+
+Subscribes to a record set, and returns a handle that provides a `stop()` method, which will stop the subscription.
+
+* **name**: name of the subscription, matching the name of the server's `publish` call.
+* **arg1**, **arg2**, ...: optional arguments passed to the publisher function on the server.
+* **onComplete**: called without arguments when the server marks the subscription as complete.
+
+When you subscribe to a record set, it tells the server to send records to the client. The client stores these records in local Minimongo collections, with the same name as the `collection` argument to `set`. Meteor will queue incoming attributes until you declare the `Meteor.Collection` on the client with the matching collection name.
+
+## `Meteor.autosubscribe( func )`
+
+Automatically set up and tear down subscriptions.
+
+* **func**: a reactive function that sets up some subscriptions by calling `Meteor.subscribe`. It will automatically be re-run when its dependencies change.
+
+```javascript
+// Subscribe to the chat messages in the current room. Automatically update
+// the subscription whenever the current room changes.
+Meteor.autosubscribe( function () {
+  Meteor.subscribe( 'chat', { room: Session.get( 'currentRoom' ) } );
+} );
+```
