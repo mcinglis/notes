@@ -29,24 +29,25 @@ Meteor.publish( 'adminSecretInfo', function () {
 
 Otherwise, the publish function can `set` and `unset` individual record attributes on a client. These methods are provided by `this` in your publish function.
 
-If you use `observe` to watch changes to the database, be sure to call `this.flush` from inside your observe callbacks.
+If you use `observe` to watch changes to the database, be sure to call `this.flush` from inside your observe callbacks. Methods that update the database are considered finished when the `observe` callbacks return.
 
 ```javascript
 // Server: publish the current size of a collection.
-Meteor.publish( 'countsByRoom', function (roomId) {
+Meteor.publish( 'roomMessageCounts', function (roomId) {
   var self = this;
   var uuid = Meteor.uuid();
   var count = 0;
 
   var handle = Messages.find( { roomId: roomId } ).observe( {
-    added: function (doc, previousId) {
+    added: function ( message, beforeIndex ) {
       count++;
-      self.set( 'counts', uuid, { roomId: roomId, count:  } );
+      self.set( 'counts', uuid, { roomId: roomId, count: count } );
       self.flush();
     },
-    removed: function (doc, previousId) {
+    removed: function ( message, atIndex ) {
       count--;
-      self.set( 'counts', uuid, { roomId: roomId } );
+      self.set( 'counts', uuid, { roomId: roomId, count: count } );
+      self.flush();
     }
   } );
 
@@ -62,11 +63,11 @@ Meteor.publish( 'countsByRoom', function (roomId) {
 } );
 
 // Client: declare collection to hold count of objects.
-Counts = new Meteor.Collection('counts');
+Counts = new Meteor.Collection( 'counts' );
 
 // Client: autosubscribe to the count for the current room.
 Meteor.autosubscribe( function () {
-  Meteor.subscribe( 'countsByRoom', Session.get( 'roomId' ) );
+  Meteor.subscribe( 'roomMessageCounts', Session.get( 'roomId' ) );
 } );
 
 // Client: use the new collection
