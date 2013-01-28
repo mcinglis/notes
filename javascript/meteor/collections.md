@@ -5,7 +5,7 @@ Meteor stores data in *collections*.
 ## `new Meteor.Collection(name, [options])`
 
 * **name**: the name of the collection. If null, creates an unmanaged (unsynchronized) local collection.
-* options[**manager**]: the Meteor connection that will manage this collection, defaults to `Meteor` if null. Unmanaged collections cannot specify a manager.
+* options **manager**: the Meteor connection that will manage this collection, defaults to `Meteor` if null. Unmanaged collections cannot specify a manager.
 
 Calling this function is analogous to declaring a model in a traditional ORM-centric framework. It sets up a *collection* of *documents* to store information. Each document is a JSON object, and has a `_id` property whose value is unique in the collection.
 
@@ -48,11 +48,11 @@ $ meteor remove autopublish
 Find the documents in a collection that match the selector.
 
 * **selector** (Mongo selector or String): the query
-* options[**sort**] (Object: sort specifier): sort order (default: natural order)
-* options[**skip**] (Number): number of results to skip at the beginning
-* options[**limit**] (Number): maximum number of results to return
-* options[**fields**] (Object: field specifier): (Server only) fields to return or exclude.
-* options[**reactive**] (Boolean): (Client only) Default `true`; pass `false` to disable reactivity.
+* options **sort** (Object: sort specifier): sort order (default: natural order)
+* options **skip** (Number): number of results to skip at the beginning
+* options **limit** (Number): maximum number of results to return
+* options **fields** (Object: field specifier): (Server only) fields to return or exclude.
+* options **reactive** (Boolean): (Client only) Default `true`; pass `false` to disable reactivity.
 
 `find` does not immediately access the database or return documents. Instead, it returns a cursor object with the following methods:
 
@@ -85,7 +85,7 @@ Items.insert({ list: groceriesId, name: 'Watercress' });
 Items.insert({ list: groceriesId, name: 'Persimmons' });
 ```
 
-## *collection*`.update(selector, modifier, [options], [callback])
+## *collection*`.update(selector, modifier, [options], [callback])`
 
 Modifies one or more documents in the collection.
 
