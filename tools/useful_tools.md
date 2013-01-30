@@ -8,3 +8,4 @@
 * [`youtube-dl`](https://rg3.github.com/youtube-dl/) downloads videos from YouTube and other sites.
 * [`mtr`](http://www.bitwizard.nl/mtr/) combines the functionality of `traceroute` and `ping`.
 * [`nautilus-open-terminal`] provides an "open terminal here" right-click option in Nautilus.
+* `fortune` returns a random fortune, `cowsay` provides a cow that reads from stdin, and `lolcat` makes things colorful.

@@ -23,3 +23,4 @@
 
 **unassuming**: not pretentious or arrogant; modest.
 
+**pensive**: engaged in, involving, or reflecting deep or serious thought.
