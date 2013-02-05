@@ -2,7 +2,7 @@
 
 Modules must be imported before defining any functions, so imports are usually done at the top of the file.
 
-```haskell
+``` haskell
 import Data.List
 
 -- All the functions that `Data.List` exports are now available in the
@@ -26,7 +26,7 @@ However, if you've loaded a script that already imports a module, you don't need
 
 ## Dealing with name clashes
 
-```haskell
+``` haskell
 -- Selective imports
 import Data.List (nub, sort)
 
