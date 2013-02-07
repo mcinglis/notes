@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-'''Demonstrates what 3.3's `yield from` can do for a basic binary tree
+"""Demonstrates what 3.3's `yield from` can do for a basic binary tree
 implementation.
 
-http://www.cosc.canterbury.ac.nz/greg.ewing/python/yield-from/yf_current/Examples/binary_tree.py
-'''
+"""
+
 
 class BinaryTree:
     def __init__(self, left=None, me=None, right=None):
@@ -20,6 +20,7 @@ class BinaryTree:
             yield self.me
         if self.right:
             yield from self.right
+
 
 class BinaryTreeOldWay:
     def __init__(self, left=None, me=None, right=None):

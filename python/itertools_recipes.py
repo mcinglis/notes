@@ -1,31 +1,39 @@
 #!/usr/bin/env python
 
-from itertools import islice
+import operator
+from collections import deque
+from itertools import islice, imap
+
 
 def take(n, iterable):
     '''Return first n items of the iterable.'''
     return islice(iterable, n)
 
-def tabulate(function, start=0):
+
+def tabulate(func, start=0):
     '''Return function(n) for n=0 up to start.'''
-    return (function(n) for n in range(start))
+    return (func(n) for n in range(start))
+
 
 def consume(iterator, n=None):
     '''Advance the iterator by n steps, or consume entirely if no n given.'''
     if n is None:
         # feed the entire iterator into a zero-length deque
-        collections.deque(iterator, maxlen=0)
+        deque(iterator, maxlen=0)
     else:
         # advance to the empty slice starting at position n
-        next(islice(iterator, n, n), None)
+        next(islice(iterator, n, n))
+
 
 def nth(iterable, n, default=None):
     '''Returns the nth item, or a default value.'''
     return next(islice(iterable, n, None), default)
 
+
 def quantify(iterable, predicate=bool):
     '''Count how many times the predicate is true.'''
     return sum(imap(predicate, iterable))
+
 
 def padnone(iterable):
     '''Returns the sequence elements and then returns None indefinitely.
@@ -34,16 +42,20 @@ def padnone(iterable):
     '''
     return chain(iterable, repeat(None))
 
+
 def ncycles(iterable, n):
     '''Returns the sequence elements n times.'''
     return chain.from_iterable(repeat(tuple(iterable), n))
 
+
 def dotproduct(v1, v2):
     return sum(imap(operator.mul, v1, v2))
+
 
 def flatten(lists):
     '''Flatten one level of nesting.'''
     return chain.from_iterable(lists)
+
 
 def repeatfunc(func, times=None, *args):
     '''Repeat calls to func with the specified arguments.
@@ -54,6 +66,7 @@ def repeatfunc(func, times=None, *args):
         return starmap(func, repeat(args))
     return starmap(func, repeat(args, times))
 
+
 def pairwise(iterable):
     '''Breaks a sequence into an iterator of its elements in pairs.
 
@@ -63,6 +76,7 @@ def pairwise(iterable):
     next(b, None)
     return izip(a, b)
 
+
 def grouper(n, iterable, fillvalue=None):
     '''Collect data into fixed-length chunks or blocks.
 
@@ -70,6 +84,7 @@ def grouper(n, iterable, fillvalue=None):
     '''
     args = [iter(iterable)] * n
     return izip_longest(fillvalue=fillvalue, *args)
+
 
 def roundrobin(*iterables):
     '''Example: roundrobin('ABC', 'D', 'EF') -> A, D, E, B, F, C'''
@@ -79,9 +94,10 @@ def roundrobin(*iterables):
         try:
             for n in nexts:
                 yield n()
-            except StopIteration:
-                pending -= 1
-                nexts = cycle(islice(nexts, pending))
+        except StopIteration:
+            pending -= 1
+            nexts = cycle(islice(nexts, pending))
+
 
 def powerset(*iterable):
     '''Example:
@@ -89,6 +105,7 @@ def powerset(*iterable):
     '''
     return chain.from_iterable(combinations(iterable, n)
                                for n in range(len(iterable) + 1))
+
 
 def unique_everseen(iterable, key=None):
     '''Lists unique elements, preserving order. Remember all elements
@@ -109,6 +126,7 @@ def unique_everseen(iterable, key=None):
                 seen.add(el)
                 yield el
 
+
 def unique_justseen(iterable, key=None):
     '''Lists unique elements, preserving order. Remembers only the
     element just seen.
@@ -118,6 +136,7 @@ def unique_justseen(iterable, key=None):
         unique_justseen('ABBCcAD', str.lower) -> A, B, C, A, D
     '''
     return imap(next, imap(itemgetter(1), groupby(iterable, key)))
+
 
 def iter_except(func, exception, first=None):
     '''Call a function repeatedly until an exception is raised.
@@ -142,10 +161,12 @@ def iter_except(func, exception, first=None):
     except exception:
         pass
 
+
 def random_product(*args, **kwargs):
     '''Random selection from itertools.product(*args, **kwargs).'''
     pools = map(tuple, args) * kwargs.get('repeat', 1)
     return tuple(random.choice(pool) for pool in pools)
+
 
 def random_permutation(iterable, order):
     '''Random selection from itertools.permutations(iterable, r).'''
@@ -154,11 +175,13 @@ def random_permutation(iterable, order):
         order = len(pool)
     return tuple(random.sample(pool, order))
 
+
 def random_combination(iterable, order):
     '''Random selection from itertools.combinations(iterable, r).'''
     pool = tuple(iterable)
     indices = sorted(random.sample(range(len(pool)), order))
     return tuple(pool[i] for i in indices)
+
 
 def random_combination_with_replacement(iterable, order):
     '''Random selection from
@@ -168,9 +191,9 @@ def random_combination_with_replacement(iterable, order):
     indices = sorted(random.randrange(len(pool)) for _ in range(r))
     return tuple(pool[i] for i in indices)
 
+
 # Many of these recipes can be optimized by replacing global lookups
 # with local variables defined as default values, like below.
 
 def dotproduct(v1, v2, sumf=sum, mapf=imap, mulf=operator.mul):
     return sumf(mapf(mulf, v1, v2))
-

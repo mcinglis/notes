@@ -29,7 +29,7 @@ flip f x y = f y x
 ($) :: (a -> b) -> a -> b
 f $ x = f x
 
-until :: (a -> Bool) -> (a -> a) -> a -> a
-until p f x | p x       = x
-            | otherwise = until p f (f x)
+until' :: (a -> Bool) -> (a -> a) -> a -> a
+until' p f x | p x       = x
+             | otherwise = until' p f (f x)
 

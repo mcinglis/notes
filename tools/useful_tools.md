@@ -22,6 +22,8 @@
 
 [`flake8`](https://bitbucket.org/tarek/flake8/overview) detects errors, PEP8 violations, and the cyclomatic complexity of Python code.
 
+[Jedi](https://github.com/davidhalter/jedi) is an autocompletion tool for Python.
+
 [`hdevtools`](https://github.com/bitc/hdevtools) is a static analyzer of Haskell code.
 
 
