@@ -175,7 +175,7 @@ Procs return from the context in which they were defined.
 
 ``` ruby
 def return_proc
-  Proc.new { return "Now you see me" }.call
+  proc { return "Now you see me" }.call
   return "Now you don't!"
 end
 

@@ -26,4 +26,8 @@
 
 [`hdevtools`](https://github.com/bitc/hdevtools) is a static analyzer of Haskell code.
 
+### Things Ruby gems need
+
+* `libxml2-devel`
+* `libxslt-devel`
 
