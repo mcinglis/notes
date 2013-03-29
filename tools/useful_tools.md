@@ -2,7 +2,7 @@
 
 * `curl` is great for making network requests.
 * `xclip` can copy things to the X clipboard.
-* [`ack`](http://betterthangrep.com/) is a better alternative to `grep`.
+* [`ag`](https://github.com/ggreer/the_silver_searcher) is a faster alternative to [`ack`](http://betterthangrep.com/), which is a better alternative to `grep`.
 * [`ngrep`](http://ngrep.sourceforge.net/) is a pattern matcher for the network layer.
 * [`trash-cli`](https://github.com/andreafrancia/trash-cli) is a command-line interface to send things to the trash; it can be aliased over `rm`.
 * `htop` is a better alternative to `top` for viewing processes.
@@ -15,6 +15,8 @@
 * [`bash_completion`] adds a stack of auto-completion features to Bash.
 
 ## Programming
+
+[`ruby-devel`] on Fedora simply installs all the development libraries needed for running compiled versions of Ruby without a hitch.
 
 [`jshint`](https://github.com/jshint/jshint) detects errors in JavaScript code and enforces your team's coding conventions.
 
